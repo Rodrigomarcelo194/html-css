@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mídias em html</title>
+
+</head>
+<body>
+    <h1>imagem dinâmicas</h1>
+    <p>tente abrir esse site em varias dispositivo diferente ou simplismente aumente e diminua a tamanho do seu nevegador.</p>
+
+    <picture>
+        <source media="max-width: 750px" srcset="imagens/foto-p.png"type="imag/png">
+
+        <source media="max-width: 1050px" srcset="image/foto-md.png"type="imag/png">
+
+        <img src="imagem/foto-gd.png" width="1200" alt="imagem flexivel">
+    </picture>
+
+    <picture>
+  <source srcset="imagem/foto-gd.png" media="(min-width: 1200px)">
+  <source srcset="imagem/foto-md.png" media="(min-width: 768px)">
+  <img src="imagem-baixa-resolucao.jpg" alt="Descrição da imagem">
+</picture>
+<h1>reproduzir audio </h1>
+<p>vamos aprender a produzir áudio no html</p>
+<audio src="midia/happy-mistake.mp3.mp3" controls autoplay></audio>
+
+<audio preload="metadata" autoplay controls loop>
+    <source src="midia/happy-mistake.mp3.mp3" type="audio/ogg">
+    <source src="midia/guanacast-33.mp3" type="audio/mpeg">
+    <source src="midia/guanacast-33.mp3" type="audio/wav">
+    <p>infelismente seu navergador nao conseque abri o audio. <a href="midia/guanacast-33.mp3">clique aqui para baixar o aquivo</a></p>
+</audio>
+</body>
+</html>

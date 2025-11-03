@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Contato</title>
+  <style>
+    body { background-color: #b12f42;
+      font-family: Arial, sans-serif;
+      background: #c3acac;
+      padding: 40px;
+    }
+
+    .form-container {
+      background: #fff;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Formulário de Contato</h2>
+    <h3>Dados pessoais</h3>
+    <form id="contactForm">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required>
+
+       <label for="endereco">endereco:</label>
+      <input type="endereco" id="endereco" name="endereco" required> 
+
+       <label for="cidade">cidade:</label>
+      <input typ="cidad" id="cidade" name="cidade" required> 
+
+      <label for="state">Estado:</label>
+      <select id="state" name="state" required>
+        <option value="">Selecione um estado</option>
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+      </select>
+
+       
+      <label for="message">Mensagem:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Enviar</button>
+      <div id="responseMessage"></div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const responseMessage = document.getElementById('responseMessage');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Impede envio real
+
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      if (name === '' || email === '' || message === '') {
+        responseMessage.innerHTML = '<p class="error-message">Por favor, preencha todos os campos.</p>';
+        return;
+      }
+
+      // Simulação de envio bem-sucedido
+      responseMessage.innerHTML = '<p class="success-message">Mensagem enviada com sucesso!</p>';
+      form.reset();
+    });
+  </script> 
+  <br>
+  <br>
+  <fieldset>
+    <legend>Dodos proficionais</legend>
+    <p><strong>Natureza do cargo.</strong></p>
+    <input type="radio" nome="cargo" value="finaceiro">finaceiro
+    <input type="radio" nome="cargo" value="recepcao">recepcao
+    <input type="radio" nome="cargo" value="administrativo">administrativo
+    <input type="radio" nome="cargo" value="juridico">juridico
+    <input type="radio" nome="cargo" value="gerencia">gerencia
+
+    <p><strong>area de interesse</strong></p>
+    <label><input type="checkbox" nome="interesse" value="computador">gerencia</label>
+    <input type="radio" nome="cargo" value="gerencia">finaceiro
+    <input type="radio" nome="cargo" value="gerencia">recepcao
+    <input type="radio" nome="cargo" value="gerencia">administrativo
+    <input type="radio" nome="cargo" value="gerencia">juridico
+    <input type="radio" nome="cargo" value="gerencia">gerencia
+
+
+  </fieldset>
+</body>
+</html>
